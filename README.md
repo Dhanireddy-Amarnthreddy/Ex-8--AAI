@@ -1,5 +1,5 @@
- <H4>NAME: G Venkata Pavan Kumar</H4>
-<H4>REGISTER NO: 212221240013</H4>
+ <H4>NAME: D.Amarnath Reddy</H4>
+<H4>REGISTER NO: 212221240012</H4>
 <H3>EX. NO.8</H3>
 <H3>DATE:</H3>
 <H1 ALIGN =CENTER>Implementation of Speech Recognition</H1>
