@@ -1,5 +1,5 @@
- <H3>NAME: D.Amarnath Reddy</H3>
-<H3>REGISTER NO: 212221240012</H3>
+ <H4>NAME: G Venkata Pavan Kumar</H4>
+<H4>REGISTER NO: 212221240013</H4>
 <H3>EX. NO.8</H3>
 <H3>DATE:</H3>
 <H1 ALIGN =CENTER>Implementation of Speech Recognition</H1>
@@ -20,36 +20,35 @@ Step 11: Perform speech recognition with exceptional handling:<Br>
 •	If successful, print the recognized text.<Br>
 •	Handle specific exceptions: If the recognition result is unknown or if there is an issue with the request to the Google Speech Recognition service, print corresponding error messages.<Br>
 •	A generic exception block captures any other unexpected errors.<Br>
+<H3>Program:</H3>
 
-## Program:
-```
+```python
 import speech_recognition as sr
-def record_audio():
-    r=sr.Recognizer()
-    r.energy_threshold = 6000
-    voicedata=''
-    try:
-        with sr.Microphone() as source:
-            audio=r.listen(source)
-            voicedata=r.recognize_google(audio)            
-    except sr.UnknownValueError:
-        print("Unable to Recognize Audio")
-    except sr.RequestError:
-        print("Unable to find the Resource")
-    return voicedata
-while True:
-    print("Say Something ....")
-    text=record_audio()
-    print(text)
-    if text=="stop" or text=="close" or text=="exit":
-        exit(1)
+# initialize the reconizer
+r=sr.Recognizer()
+# set duration for the audio
+duration=15 # second=
+# record audio
+print("say somthing:")
 
+with sr.Microphone() as source:
+    audio_date=r.listen(source,timeout=duration)
+try:
+    text=r.recognize_google(audio_date)
+    print("you said:",text)
+except sr.UnknownValueError:
+    print("sorry ,could not undersand audio")
+except sr.RequestError as e:
+    print(f'Error with the request to google speech recognation service:{e}')
+except Exception as e:
+    print(f'Error:{e}')
 ```
-
 <H3> Output:</H3>
 
-![Screenshot 2024-04-27 110509](https://github.com/shoaib3136/Ex-8--AAI/assets/117919362/f397f64c-477c-4670-90aa-d9b6a7a60b35)
-
+![image](https://github.com/Pavan-Gv/Ex-8--AAI/assets/94827772/6f6c336b-921e-473c-a1c7-750ce8891b74)
 
 <H3> Result:</H3>
-Thus, The implementation of speech recognition is executed successfully. 
+
+Thus, we have implemented a program that will transcribe the audio file in the file variable and print the transcribed text on the console, one line at a time.
+
+
